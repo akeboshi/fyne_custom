@@ -13,14 +13,14 @@ func main() {
 	window := app.NewWindow("Shadow Counter")
 
 	hello2 := NewTappableLabel("hello fyne!", nil)
-	hello1 := widget.NewButton("hello fyne!", func(){
+	hello1 := NewTappableLabel("hello fyne!", func() {
 		hello2.SetText("bye fyne!")
 	})
-	
+
 	hello3 := widget.NewLabel("hello fyne!")
-	hello1.OnTapped = func(){
-		hello2.SetText("bye fyne!")
+	hello1.OnTapped = func() {
 		hello1.SetText("bye fyne!")
+		hello2.SetText("bye fyne!")
 		hello3.SetText("bye fyne!")
 	}
 	hello4 := widget.NewLabel("hello fyne!")
